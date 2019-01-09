@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    margin: 50px auto;
+    text-align: center;
+}
+
+#jeu{
+    height: 458px;
+    width: 458px;
+    margin: 150px auto;
+    overflow: hidden;
+}
+
+.l{
+    height: 150px;
+    width: 460px;
+}
+
+.c1{
+    float: left;
+    margin-right: 4px;
+}
+
+.c2{
+    float: left;
+    margin-right: 4px;
+}
+
+.c3{
+    float: left;
+}
+

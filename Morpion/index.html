@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Morpion</title>
+    
+</head>
+<body>
+
+
+    <div id="page">
+        <div id="container">
+
+            <h1> <span class="chevron">&#60;</span> Morpion <span class="chevron">&#62</span> </h1>
+
+            <ul class="menu" id="mode">            
+                <li><button id="resume">Continuer</button></li>
+                <li><button id="new">Nouvelle partie</button></li>
+                <li><button id="score">Score</button></li>
+            </ul>
+
+            <ul class="menu" id="player">
+                <form action="select_player"></form>            
+                    <li><input type="text" name="J1" placeholder="Joueur 1" required minlength="3" maxlength="12"></li>
+                    <li><input type="text" name="J2" placeholder="Joueur 2" required minlength="3" maxlength="12"></li>
+                    <li><input type="submit" value="Submit" id="submit"></li>
+                </form>
+            </ul>
+
+            <h1> <span class="chevron">&#60/</span> Morpion <span class="chevron">&#62</span> </h1>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
