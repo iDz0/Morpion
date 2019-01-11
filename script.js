@@ -1,6 +1,5 @@
-
-var p1 = {nom: "J1", src: "./img/case_croix.png", symb: " x "};
-var p2 = {nom: "J2", src: "./img/case_rond.png", symb: " o "};
+var p1 = {nom: $("#j1").innerText, src: "./img/case_croix.png", symb: " x "};
+var p2 = {nom: $("#j2").innerText, src: "./img/case_rond.png", symb: " o "};
 
 var players = [p1, p2];
 var current_player = p1;
@@ -9,7 +8,7 @@ var grille = [
   " - ", " - ", " - ",
   " - ", " - ", " - ",
   " - ", " - ", " - "
-];
+]
 
 
 function aff(){
@@ -49,16 +48,41 @@ function game(){
    else{
       current_player = p1;
    }
-         
+
+   // document.getElementsByTagName('h2')[0].innerHTML = "Joueur : " + current_player.nom;
+
 }
 
 function nulle(){
    console.log('Match nulle');
 }
 
-function verif(){
-   return false;
+function win(){
+  document.getElementsByTagName('h2')[0].innerText = "Joueur : " + current_player.nom + " won !";
 }
 
+function verif(){
 
+   for(var i = 0; i < 7; i+=3){
+     if(grille[i] == grille[i+1] && grille[i] == grille[i+2] && grille[i] != " - "){
+       return true;
+     }
+   }
 
+   for(var i = 0; i < 3; i++){
+     if(grille[i] == grille[i+3] && grille[i] == grille[i+6] && grille[i] != " - "){
+       return true;
+     }
+   }
+
+   if(grille[0] == grille[4] && grille[0] == grille[8] && grille[0] != " - "){
+     return true;
+   }
+
+   if(grille[2] == grille[4] && grille[2] == grille[6] && grille[2] != " - "){
+     return true;
+   }
+
+   return false;
+
+}
