@@ -1,5 +1,5 @@
-var p1 = {nom: $("#j1").innerText, src: "./img/case_croix.png", symb: " x "};
-var p2 = {nom: $("#j2").innerText, src: "./img/case_rond.png", symb: " o "};
+window.p1 = {nom: "Joueur 1", src: "./img/case_croix.png", symb: " x "};
+window.p2 = {nom: "Joueur 2", src: "./img/case_rond.png", symb: " o "};
 
 var players = [p1, p2];
 var current_player = p1;
@@ -19,18 +19,7 @@ function aff(){
 }
 
 
-window.onload = function(){
-   imgs = document.getElementsByTagName('img');
-   for(var i = 0; i<9; i++){
-      imgs[i].onclick = function(){
-         if(this.src.slice(-8) == "case.png"){
-            this.src = current_player.src;
-            grille[parseInt(this.id, 10)] = current_player.symb;
-            game();
-         }
-      }
-   }
-}
+
 
 function game(){
    if(verif()){
@@ -38,7 +27,7 @@ function game(){
       return;
    }
    else if(!grille.includes(" - ")){
-      nulle();
+      nul();
       return;
    }
 
@@ -49,17 +38,21 @@ function game(){
       current_player = p1;
    }
 
-   // document.getElementsByTagName('h2')[0].innerHTML = "Joueur : " + current_player.nom;
+   document.getElementsByTagName('h2')[0].innerText = "Joueur : " + current_player.nom;
 
 }
 
-function nulle(){
-   console.log('Match nulle');
+
+
+function nul(){
+   document.getElementsByTagName('h2')[0].innerText = "Match nul !"
 }
 
 function win(){
   document.getElementsByTagName('h2')[0].innerText = "Joueur : " + current_player.nom + " won !";
 }
+
+
 
 function verif(){
 
@@ -86,3 +79,24 @@ function verif(){
    return false;
 
 }
+
+
+
+window.onload = function(){
+   document.getElementsByTagName('h2')[0].innerText = "Joueur : " + current_player.nom;
+   imgs = document.getElementsByTagName('img');
+   for(var i = 0; i<9; i++){
+      imgs[i].onclick = function(){
+         if(this.src.slice(-8) == "case.png"){
+            this.src = current_player.src;
+            grille[parseInt(this.id, 10)] = current_player.symb;
+            game();
+         }
+      }
+   }
+}
+
+
+
+
+
